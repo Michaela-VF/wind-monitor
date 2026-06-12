@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  turbine: one
+  wind_speed: 1.5
+  power_output: 1.5
+
+two:
+  turbine: two
+  wind_speed: 1.5
+  power_output: 1.5
