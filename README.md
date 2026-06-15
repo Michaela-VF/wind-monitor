@@ -107,11 +107,11 @@ Run:
     `rails console`
 Then:
     `Reading.all`
-Should show the above [created reading](wind-monitor/images/json-wt-reading.png).
+Should show the above [created reading](wind-monitor/images/json-wt-reading.png) .
 
 Then:
     `http://localhost:3000/readings`
-Should show the [json reading]( wind-monitor/images/json-wt-reading.png.) on the browser.
+Should show the [json reading]( wind-monitor/images/json-wt-reading.png) on the browser.
 
 # Second API endpoint: `GET/readings`:
 9. Implement controller `index` action
