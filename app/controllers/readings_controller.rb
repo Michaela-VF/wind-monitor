@@ -1,5 +1,4 @@
 class ReadingsController < ApplicationController
-
   def index
     readings = Reading.all
 
@@ -22,5 +21,3 @@ class ReadingsController < ApplicationController
     params.require(:reading).permit(:turbine_id, :wind_speed, :power_output)
   end
 end
-
-
