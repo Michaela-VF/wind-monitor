@@ -1,6 +1,8 @@
 require "net/http"
 require "json"
 
+# https://docs.ruby-lang.org/en/master/Net/HTTP.html?utm_source=chatgpt.com
+
 TURBINES = [ 1, 2, 3, 4, 5 ]
 
 loop do
@@ -13,12 +15,19 @@ loop do
       }
     }
 
+    # TODO: maybe wrap with HTTParty
+
+    # creates a destination address
     uri = URI("http://localhost:3000/readings")
 
+    # creates a connection object
     http = Net::HTTP.new(uri.host, uri.port)
+
+    # creates a `post` request object
     req = Net::HTTP::Post.new(uri, "Content-Type" => "application/json")
     req.body = data.to_json
 
+    # sends the request
     http.request(req)
 
     puts "Sent reading for turbine #{id}"

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   post "/readings", to: "readings#create"
   get "/readings", to: "readings#index"
+  get "/alerts", to: "alerts#index"
+  patch "/alerts/:id", to: "alerts#update"
 end

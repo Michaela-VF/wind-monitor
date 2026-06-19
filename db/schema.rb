@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_12_153346) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_18_171130) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "alerts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "message"
-    t.boolean "resolved"
+    t.boolean "resolved", default: false
     t.bigint "turbine_id", null: false
     t.datetime "updated_at", null: false
     t.index ["turbine_id"], name: "index_alerts_on_turbine_id"
