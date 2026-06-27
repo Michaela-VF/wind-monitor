@@ -1,4 +1,4 @@
-class DashoboardController < ApplicationController
+class DashboardController < ApplicationController
   def index
     @turbine_count = Turbine.count
     @reading_count = Reading.count
