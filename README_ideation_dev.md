@@ -141,5 +141,84 @@ In a NEW terminal:
 
 [In Action Visualisation](images/json-wt-reading.png)
 ---
-Alert Engine
+# PHASE 4 - Alert Engine
+    N.B: 
+        1. turbine -> reading.turbine
+        2. services goes inside app!
 
+
+# PHASE 5 - Clean back end before Dashboard:
+    - AlertService: move the alert into a service;
+    - Controller - service + errors handling;
+    - Add more validations - reading;
+    - MANUAL TESTING:
+# No turbine_id:
+        curl -X POST http://localhost:3000/readings \
+        -H "Content-Type: application/json" \
+        -d '{
+            "reading": {
+            "turbine_id": 1,
+            "wind_speed": 8.2,
+            "power_output": 1.4
+            }
+        }'
+
+# No wind_speed:
+curl -X POST http://localhost:3000/readings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "reading": {
+      "turbine_id": ,
+      "power_output": 1.4
+    }
+  }'
+
+# TODO:
+    # Bad Json Data 
+curl -X POST http://localhost:3000/readings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "reading": {
+      "turbine_id": 1,
+      "wind_speed":,
+      "power_output": 1.4
+    }
+  }'
+  
+
+# No power_output:
+curl -X POST http://localhost:3000/readings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "reading": {
+      "turbine_id": 1,
+      "wind_speed": 8.2,
+    }
+  }'
+
+ # TODO:   # Bad Request
+    curl -X POST http://localhost:3000/readings \
+    -H "Content-Type: application/json" \
+    -d '{
+        "reading": {
+        "turbine_id": 1,
+        "wind_speed": 8.2,
+        "power_output":
+        }
+    }'
+N.B: https://api.rubyonrails.org/classes/ActiveSupport/Rescuable/ClassMethods.html
+
+# PHASE 6 - Dashboard Overview
+1. Dashboard Controller
+2. Dashboard route to index
+3. Controller Metrix:
+    - turbine count
+    - reading count
+    - active alerts
+    - resolved alerts
+# TODO: This will be a front end app with Vite+React+JS
+4. Dashboard View (to mirror the above controller actions)
+    - Total Turbines
+    - Total Readings
+    - Active Alerts
+    - Resolved Alerts

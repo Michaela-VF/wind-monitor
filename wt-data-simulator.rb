@@ -1,7 +1,7 @@
 require "net/http"
 require "json"
 
-# https://docs.ruby-lang.org/en/master/Net/HTTP.html?utm_source=chatgpt.com
+# https://docs.ruby-lang.org/en/master/Net/HTTP.html
 
 TURBINES = [ 1, 2, 3, 4, 5 ]
 
